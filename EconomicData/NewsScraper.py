@@ -1,5 +1,6 @@
+
+from NewsHelperFunc import dfReturner
 from PostGresConn import PostgresSQL
-from EconomicData.NewsHelperFunc import dfReturner
 
 def main():
     df = dfReturner()
@@ -7,6 +8,11 @@ def main():
     db = PostgresSQL()
     try:
         for data in datas:
-            db.InsertData("economicnews", data=data)
+            result = db.InsertData("economicnews", data=data)
+            if result == 200:
+                print("Executed Properly!")
     except Exception as e:
-        print("ran into error as {e}")
+        print(f"ran into error as {e}")
+
+
+main()
