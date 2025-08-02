@@ -1,0 +1,8 @@
+.env
+scraped_page.html
+*.sh
+*.cfg
+*.txt
+*__
+*.csv
+*.log
