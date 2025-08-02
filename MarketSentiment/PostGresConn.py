@@ -67,4 +67,8 @@ class PostgresSQL:
 
         except Exception as e:
             print(f"error as {e}")
+<<<<<<< HEAD
             return 400
+=======
+            return 400
+>>>>>>> 00320e8f66942b89265c2f02477a694de7a1663f

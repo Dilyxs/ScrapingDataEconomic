@@ -132,8 +132,7 @@ def forex(pair):
         return None
 
 # MAIN LOOP
-list_currency = [ "AUD_USD", "EUR_USD", "USD_JPY", "USD_MXN", "USD_ZAR", "USD_CHF", "USD_CAD", "GBP_USD", "NZD_USD"]
-
+list_currency = ["EUR_USD", "AUD_USD", "USD_JPY", "USD_MXN", "USD_ZAR", "USD_CHF", "USD_CAD", "GBP_USD", "NZD_USD"]
 final_rows = []
 
 try:
@@ -150,7 +149,7 @@ try:
         df['Currency'] = pair
         # Get last row as dictionary for PostgreSQL insert
         last_row_dict = df.iloc[-1].to_dict()
-        db.InsertData("sentimentdata", last_row_dict)
+        db.InsertData("forexsentiment", last_row_dict)
         time.sleep(random.uniform(0.3, 1.5))
 except Exception as e:
     logging.error(f"Error during processing: {e}")
